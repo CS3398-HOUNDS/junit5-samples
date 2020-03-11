@@ -41,7 +41,7 @@ class CalculatorTests {
 
 	// First test created
 	@Test
-	@DisplayName("10 - 6 = 4")
+	@DisplayName("(Jackson) 10 - 6 = 4")
 	void subtractsTwoMoreNumbers() {
 		Calculator calculator = new Calculator();
 		assertEquals(4, calculator.subtract(10, 6), "10 - 6 should equal 4");
@@ -62,7 +62,7 @@ class CalculatorTests {
 
 	// Second test created
 	@Test
-	@DisplayName("5 - 2 = 3")
+	@DisplayName("(Jackson) 5 - 2 = 3")
 	void subtractsTwoNumbers() {
 		Calculator calculator = new Calculator();
 		assertEquals(3, calculator.subtract(5, 2), "5 - 2 should equal 3");
