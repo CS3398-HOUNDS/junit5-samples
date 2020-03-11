@@ -38,4 +38,43 @@ class CalculatorTests {
 		assertEquals(expectedResult, calculator.add(first, second),
 				() -> first + " + " + second + " should equal " + expectedResult);
 	}
+@Test
+	@DisplayName("5 - 2 = 3")
+	void subTwoNumbers() {
+		Calculator calculator = new Calculator();
+		assertEquals(3, calculator.sub(5, 2), "5 - 2 should equal 3");
+	}
+
+	@ParameterizedTest(name = "{1} - {0} = {1}")
+	@CsvSource({
+			"1,    0,   1",
+			"3,    2,   1",
+			"52,  51, 1",
+			"100,  1, 99"
+	})
+	void sub(int first, int second, int expectedResult) {
+		Calculator calculator = new Calculator();
+		assertEquals(expectedResult, calculator.sub(first, second),
+				() -> first + " - " + second + " should equal " + expectedResult);
+	}
+
+@Test
+	@DisplayName("8 - 4 = 4")
+	void sub1TwoNumbers() {
+		Calculator calculator = new Calculator();
+		assertEquals(4, calculator.sub(8, 4), "8 - 4 should equal 4");
+	}
+
+	@ParameterizedTest(name = "{5} - {1} = {4}")
+	@CsvSource({
+			"5,    1,   4",
+			"2,    1,   1",
+			"60,  51, 9",
+			"30,  10, 20"
+	})
+	void sub1(int first, int second, int expectedResult) {
+		Calculator calculator = new Calculator();
+		assertEquals(expectedResult, calculator.sub(first, second),
+				() -> first + " - " + second + " should equal " + expectedResult);
+	}
 }
