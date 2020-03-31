@@ -38,4 +38,47 @@ class CalculatorTests {
 		assertEquals(expectedResult, calculator.add(first, second),
 				() -> first + " + " + second + " should equal " + expectedResult);
 	}
+
+    @Test
+    @DisplayName("2 - 3 = -1")
+    void subtractTwoNumbers() {
+        Calculator calculator = new Calculator();
+        assertEquals(-1, calculator.subtract(2, 3), "2 - 3 should equal -1");
+    }
+
+    @ParameterizedTest(name = "{0} - {1} = {2}")
+    @CsvSource({
+			"1,    1,   0",
+			"1,    2,   -1",
+			"49,  51,   -2",
+			"1,  100, -99"
+    })
+
+    void subtract(int minuend, int subtrahend, int difference) {
+        Calculator calculator = new Calculator();
+        assertEquals(difference, calculator.subtract(minuend, subtrahend),
+                () -> minuend + " - " + subtrahend + " should equal " + difference);
+    }
+
+    @Test
+    @DisplayName("5 - 3 = 2")
+    void subtractTwoNumbers2() {
+        Calculator calculator = new Calculator();
+        assertEquals(2, calculator.subtract(5, 3), "5 - 3 should equal 2");
+    }
+
+    @ParameterizedTest(name = "{0} - {1} = {2}")
+    @CsvSource({
+			"1,    1,   0",
+			"1,    -2,   3",
+			"50,  -40,   90",
+			"100, 1 , 99"
+    })
+
+    void subtract2(int minuend, int subtrahend, int difference) {
+        Calculator calculator = new Calculator();
+        assertEquals(difference, calculator.subtract(minuend, subtrahend),
+                () -> minuend + " - " + subtrahend + " should equal " + difference);
+    }
+
 }
