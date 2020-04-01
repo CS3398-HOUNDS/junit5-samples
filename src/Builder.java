@@ -37,8 +37,8 @@ class Builder {
 		run(".", "java", "--version");
 		checkLicense("src/eclipse-public-license-2.0.java", ".java");
 
-		// jupiter-starter
-		// TODO run("junit5-jupiter-starter-ant", "antw"); https://github.com/junit-team/junit5-samples/issues/66
+		 //jupiter-starter
+		run("junit5-jupiter-starter-ant", "antw"); https://github.com/junit-team/junit5-samples/issues/66
 		run("junit5-jupiter-starter-gradle", "gradlew", "clean", "test");
 		run("junit5-jupiter-starter-gradle-groovy", "gradlew", "clean", "test");
 		run("junit5-jupiter-starter-gradle-kotlin", "gradlew", "clean", "test");
